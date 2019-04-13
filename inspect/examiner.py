@@ -13,7 +13,7 @@ class ExaminerIsIntString(Processor):
             return False
     
     def _get_fail_reason_msg(self):
-        return "Param %s is not integer."
+        return "Param %s is not integer string."
     
 class ExaminerInEnum(Processor):
     
