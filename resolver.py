@@ -12,7 +12,7 @@ class ParamsResolver:
         self.__fail_action = action;
         return self
     
-    def add(self, param_name, optional=False, default=None, processors=[]):
+    def add(self, param_name, optional=False, default=None, processors=()):
         self.__processors[param_name] = processors
         if optional: 
             self.__optionals[param_name] = default
