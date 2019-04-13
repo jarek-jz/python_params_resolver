@@ -21,18 +21,18 @@ if __name__ == '__main__':
     pr.register_fail_action(
         fail_action
     ).add(
-        "page-index", processors=[ExaminerIsIntString(), TransformerStringToInt()], 
+        "page-index", processors=(ExaminerIsIntString(), TransformerStringToInt()), 
         optional=True, default="0"
     ).add(
-        "page-size", processors=[ExaminerIsIntString(), TransformerStringToInt()], 
+        "page-size", processors=(ExaminerIsIntString(), TransformerStringToInt()), 
         optional=True, default="5"
     ).add(
         "sort-col",
-        processors=[ExaminerWrappedTest(is_valid_col_name, "Param %s has invalid value.")],
+        processors=(ExaminerWrappedTest(is_valid_col_name, "Param %s has invalid value."),),
         optional=True, default="id"
     ).add(
         "sort-direct",
-        processors=[ExaminerInEnum(SortDirection)],
+        processors=(ExaminerInEnum(SortDirection),),
         optional=True, default="asc"
     )
 
